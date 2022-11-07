@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RESTHeroe } from '../../interfaces/heroes.interface';
 
 @Component({
   selector: 'app-heroe',
@@ -8,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 export class HeroeComponent implements OnInit {
+
+  // heroe!:RESTHeroe
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

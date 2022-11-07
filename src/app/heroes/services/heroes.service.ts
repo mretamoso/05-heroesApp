@@ -28,4 +28,8 @@ export class HeroesService {
   agregarHeroe(heroe: RESTHeroe): Observable<RESTHeroe> {
     return this.http.post<RESTHeroe>(`${this.baseUrl}/heroes`, heroe)
   }
+  
+  actualizarHeroe(heroe: RESTHeroe): Observable<RESTHeroe> {
+    return this.http.put<RESTHeroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe)
+  }
 }

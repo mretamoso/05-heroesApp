@@ -14,7 +14,7 @@ export class HeroesService {
     return this.http.get<RESTHeroe[]>('http://localhost:3000/heroes')
   }
 
-  getHeroesPorId(id:string): Observable<RESTHeroe[]> { //TODO se indica que es de tipo observable de nombre heroe
-    return this.http.get<RESTHeroe[]>(`http://localhost:3000/heroes/${id}`)
+  getHeroesPorId(id: string): Observable<RESTHeroe> { //TODO se indica que es de tipo observable de nombre heroe
+    return this.http.get<RESTHeroe>(`http://localhost:3000/heroes/${id}`)
   }
 }

@@ -76,7 +76,15 @@ export class AgregarComponent implements OnInit {
         })
     }
 
+  }
 
+  eliminar() {
+
+    this.heroesService.eliminarHeroe(this.heroe.id!)
+    .subscribe(respuesta=>{
+
+      this.router.navigate(['/heroes'])
+    })
 
   }
 

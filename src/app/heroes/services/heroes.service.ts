@@ -20,4 +20,8 @@ export class HeroesService {
   getHeroesPorId(id: string): Observable<RESTHeroe> { //TODO se indica que es de tipo observable de nombre heroe
     return this.http.get<RESTHeroe>(`${this.baseUrl}/heroes/${id}`)
   }
+
+  getSugerencias(termino: string): Observable<RESTHeroe[]> {
+    return this.http.get<RESTHeroe[]>(`${this.baseUrl}/heroes?q=${termino}&_limit=6`)
+  }
 }

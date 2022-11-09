@@ -86,16 +86,24 @@ export class AgregarComponent implements OnInit {
 
   eliminar() {
 
-      this.dialog.open(ConfirmarComponent, {
-        width:'250px'
-      })
+    const dialog = this.dialog.open(ConfirmarComponent, {
+      width: '250px',
+      data: this.heroe
+    })
+
+    dialog.afterClosed().subscribe(
+      (result) => {
+        if (result) {
+          this.heroesService.eliminarHeroe(this.heroe.id!)
+            .subscribe(respuesta => {
+
+              this.router.navigate(['/heroes'])
+            })
+        }
+      }
+    )
 
 
-    // this.heroesService.eliminarHeroe(this.heroe.id!)
-    //   .subscribe(respuesta => {
-
-    //     this.router.navigate(['/heroes'])
-    //   })
 
   }
 

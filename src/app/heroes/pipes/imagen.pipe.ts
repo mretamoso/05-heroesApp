@@ -3,6 +3,7 @@ import { RESTHeroe } from '../interfaces/heroes.interface';
 
 @Pipe({
   name: 'imagen'
+  // pure: false//TODO para este caso el argumento que esta en el transform no se cambia porque es un objeto
 })
 export class ImagenPipe implements PipeTransform {
 
